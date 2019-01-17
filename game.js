@@ -46,24 +46,26 @@ function loadAnswers() {
     winners.push([2, 4, 6]);
 }
 loadAnswers();
-
+//update the display when you have won the game.
 var updateDisplayWon = function() {
     updateDisplay.innerText = "Hoooraayyy!!!!! You Won this game";
 }
-
+//update the display when you have draw the game.
 var updateDisplayDraw = function() {
     updateDisplay.innerText = "Oh!!! It's a Draw";
 }
-// var players = ['X','O']; // Array of strings
-// var turnCount = 0; // is used to track turns
+
+// stored currentplayer as X 
 var currentPlayer = 'X' // is of type string tells a player X, O
 // var gameState = [null,null,null,null,null,null,null,null,null]; //default everything to be nil // each item either X or O or nil
-var playerXChoices = [];
-var playerOChoices = [];
-var hasWon = false;
+var playerXChoices = []; // To store choice made by X with every click made in cell.
+var playerOChoices = []; // To store choice made by O with every click made in cell.
+var hasWon = false; // To terminate once you have done your choices made in cell.which means either won or draw
 
+// create function to store the playerMove of X & O.
 var playerMove = function(event) {
-    if(hasWon === true){
+    //here has won means that if it false it is won but if has won equal to true then return and terminate.
+    if(hasWon === true) {
         return;
     } 
     
@@ -87,28 +89,22 @@ var playerMove = function(event) {
 
     //check for draw here
     var totalTurns = playerXChoices.length + playerOChoices.length;
-   
-    if((totalTurns >= 9) && !hasWon){
+    if((totalTurns >= 9) && !hasWon) {
         updateDisplayDraw();
     }
-
     event.target.removeEventListener('click', playerMove);
-    
 };
 
 
 var startGame = function() {
     // reset game state
     resetThisGame();
-
     // register click events
     allCells.forEach(function(cell) {
         cell.addEventListener('click', playerMove);
     });
-
     // Remove play button once clicked.
     playNowButton.hidden = true;
-
     // Show game board
     gameBoard.hidden = false;
     // Show restart button
@@ -116,8 +112,7 @@ var startGame = function() {
 };
 
 // create a function that when you have already selected the cell and you cannot selected again
-// write a function that returns true if all items in
-// the array are same.
+// write a function that returns true if all items in the array are same.
 // iterate over the winners array and invoke the previous
 // function to define victory
 var winCombo = function(choices) {
@@ -139,7 +134,6 @@ for (var i = 0; i < winners.length; i++){
 };
 
 //write function to reset the game
-
 var resetThisGame = function(){
     hasWon = false;
     playerXChoices = [];
