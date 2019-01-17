@@ -18,10 +18,10 @@ header {
     width: 80%; 
     margin: 0 auto;;
     font-size: 40px;
-    /* padding: 0 0 0 50%; */
-    align-items: center;
-    flex-wrap: wrap;
-    /* justify-content: center; */
+    /* padding: 0 20% 0 20%; */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+    justify-content: center;
     font-family: 'Indie Flower', cursive;
 }
 
@@ -35,21 +35,23 @@ main {
 }
 .player {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     /* width: 50%;
     margin: 0 auto; */
     font-size: 30px;
-    padding: 30px;
+    /* padding: 30px; */
     font-family: 'Indie Flower', cursive;
 }
 
-.game {
-    background-color: transparent;
-    width: 402px;
-    height: 402px; 
-    margin: 50px auto;
-    align-items: center;
+.game-board {
+    /* background-color: transparent; */
+    /* width: 402px;
+    height: 402px;  */
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0 10% 0 10%;
   }
 
 .cell {

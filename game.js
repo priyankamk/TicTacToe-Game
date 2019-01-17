@@ -1,13 +1,13 @@
 console.log("Make this work");
 
 var gameBoard = document.querySelector('#game-board');
-
 var allCells = document.querySelectorAll('.cell');
-var resetBtn = document.querySelector('.reset-btn')
-var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
-var playNowButton = document.querySelector('.play-now-btn');
 
+
+// var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
+var playNowButton = document.querySelector('.play-now-btn');
 var updateDisplay = document.querySelector('.display');
+var resetBtn = document.querySelector('.reset-btn')
 //1st select the location of the cell or all cell or that game
 
 //how do u know that player started the game
@@ -31,10 +31,8 @@ var updateDisplay = document.querySelector('.display');
 //reset the game once you have played or end the game by clicking the reset button
 
 
-// the winning plan=So I have 3 sets of cells to compare against.
-
+// the winning plan=So I have sets of cells to compare against.
 var winners = [];
-
 function loadAnswers() {
     winners.push([0, 1, 2]);  
     winners.push([3, 4, 5]);
@@ -46,25 +44,25 @@ function loadAnswers() {
     winners.push([2, 4, 6]);
 }
 loadAnswers();
-//update the display when you have won the game.
+
+//update the display when you won the game.
 var updateDisplayWon = function() {
-    updateDisplay.innerText = "Hoooraayyy!!!!! You Won this game";
+    updateDisplay.innerText = "Hoooraayyy!!!!! You Won!!!";
 }
-//update the display when you have draw the game.
+//update the display when you draw the game.
 var updateDisplayDraw = function() {
     updateDisplay.innerText = "Oh!!! It's a Draw";
 }
 
 // stored currentplayer as X 
 var currentPlayer = 'X' // is of type string tells a player X, O
-// var gameState = [null,null,null,null,null,null,null,null,null]; //default everything to be nil // each item either X or O or nil
+
 var playerXChoices = []; // To store choice made by X with every click made in cell.
 var playerOChoices = []; // To store choice made by O with every click made in cell.
 var hasWon = false; // To terminate once you have done your choices made in cell.which means either won or draw
 
 // create function to store the playerMove of X & O.
 var playerMove = function(event) {
-    //here has won means that if it false it is won but if has won equal to true then return and terminate.
     if(hasWon === true) {
         return;
     } 
@@ -95,7 +93,7 @@ var playerMove = function(event) {
     event.target.removeEventListener('click', playerMove);
 };
 
-
+// create funtion that - Only start when the player click the button (Let's Play) button
 var startGame = function() {
     // reset game state
     resetThisGame();
@@ -148,6 +146,9 @@ var resetThisGame = function(){
     }
 };
 
+// make gameboard hidden before clicking the Let's play button.
+
 gameBoard.hidden = true;
+
 resetBtn.addEventListener('click', startGame);
 playNowButton.addEventListener('click', startGame);
