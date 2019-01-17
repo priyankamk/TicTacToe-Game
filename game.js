@@ -102,6 +102,9 @@ var startGame = function() {
 
     // Remove play button once clicked.
     playNowButton.hidden = true;
+
+    // Show restart button
+    resetBtn.hidden = false;
 };
 
 // create a function that when you have already selected the cell and you cannot selected again
@@ -144,6 +147,6 @@ var resetThisGame = function(){
     }
 };
 
-
+resetBtn.hidden = true;
 resetBtn.addEventListener('click', resetThisGame);
 playNowButton.addEventListener('click', startGame);
