@@ -87,14 +87,20 @@ var playerMove = function(event) {
 
     //check for draw here
     var totalTurns = playerXChoices.length + playerOChoices.length;
+   
     if(totalTurns >= 9){
         updateDisplayDraw();
     }
+
+    event.target.removeEventListener('click', playerMove);
     
 };
 
 
 var startGame = function() {
+    // reset game state
+    resetThisGame();
+
     // register click events
     allCells.forEach(function(cell) {
         cell.addEventListener('click', playerMove);
@@ -127,7 +133,6 @@ for (var i = 0; i < winners.length; i++){
         if (count >= 3) {
             hasWon = true;
             updateDisplayWon();
-            console.log('yay');
             return;
         }
 }
@@ -150,5 +155,5 @@ var resetThisGame = function(){
 };
 
 gameBoard.hidden = true;
-resetBtn.addEventListener('click', resetThisGame);
+resetBtn.addEventListener('click', startGame);
 playNowButton.addEventListener('click', startGame);
