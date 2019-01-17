@@ -88,7 +88,7 @@ var playerMove = function(event) {
     //check for draw here
     var totalTurns = playerXChoices.length + playerOChoices.length;
    
-    if(totalTurns >= 9){
+    if((totalTurns >= 9) && !hasWon){
         updateDisplayDraw();
     }
 

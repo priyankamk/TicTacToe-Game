@@ -17,6 +17,7 @@ header {
     display: flex;
     /* width: 100%; */
     margin: 10px;
+    font-size: 40px;
     align-items: center;
     flex-wrap: wrap;
     /* justify-content: center; */
@@ -28,7 +29,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
 }
 .player {
@@ -75,9 +76,10 @@ main {
 
 .play-now-btn ,.reset-btn {
     font-family: 'Indie Flower', cursive;
-    font-size: 20px;
+    font-size: 25px;
     background-color: aquamarine;
     border-radius: 10px;
+    justify-content: center;
 }
 
 .X {
@@ -91,5 +93,9 @@ main {
 footer {
     display: flex;
     align-items: flex-end;
-    padding:70px 80px 0 0;
+    font-family: 'Indie Flower', cursive;
+    font-size: 10px;
+    margin: 0 auto;
+    width: 80%;
+    padding: 0 0 0 40%;
 }
