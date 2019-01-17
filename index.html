@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <div class="wrapper">
+        <header>
+            <h1>TIC TAC TOE</h1>
+        </header>
+        <main>
+            <section class= "player">
+                <h4>Would you Like to be X or O</h4>
+                <!-- <br>
+                <div>Player 1</div><div>Player 2</div>
+                <br> -->
+                <input type="radio" name="radio" value="X">Player 1 - X
+                <input type="radio" name="radio" value="O">Player 2 - O
+            <button class="play-now">Let's Play this Game</button>
+            </section>
+            
+            <section class="game-board">
+                <!-- <div class="btn-div">
+                    <button type="button" id="x" class="btn"><span class="fa fa-times"><span></button>
+                    <button type="button" id="o" class="btn"><span class="fa fa-circle-o"><span></button>
+                </div> -->
+                <!-- <div class="tic-tac-toe-game"> -->
+                    <div id="0" class="cell">1</div>
+                    <div id="1" class="cell">2</div>
+                    <div id="2" class="cell">3</div>
+                    <br>
+                    <div id="3" class="cell">4</div>
+                    <div id="4" class="cell">5</div>
+                    <div id="5" class="cell">6</div>
+                    <br>
+                    <div id="6" class="cell">7</div>
+                    <div id="7" class="cell">8</div>
+                    <div id="8" class="cell">9</div>
+                    <br>
+                <!-- </div> -->
+            </section>
+
+            <section class="score-container">               
+                <!-- <div class="score"> -->
+                    <h3 class="xTurn" id="playerTurnDisplay"><span id="player">X</span>'s turn</h3>
+                    <!-- <div>Player 1 : Score<span>-</span></div>
+                    <div>Player 2 : Score<span>-</span></div> -->
+                <!-- </div> -->
+            </section>
+            <footer>
+                <button class="reset-btn">Restart</button>
+            </footer>
+        </main>
+
+    </div>
+<script src="game.js"></script>
+</body>
+</html>
