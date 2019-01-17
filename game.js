@@ -93,10 +93,13 @@ var playerMove = function(event) {
     
 };
 
+
+var addEventListenerToGameCells = function() {
 //   If cells Is Clicked
-allCells.forEach(function(cell) {
-    cell.addEventListener('click', playerMove);
-})
+    allCells.forEach(function(cell) {
+        cell.addEventListener('click', playerMove);
+    });
+};
 
 // create a function that when you have already selected the cell and you cannot selected again
 // write a function that returns true if all items in
@@ -140,5 +143,4 @@ var resetThisGame = function(){
 
 
 resetBtn.addEventListener('click', resetThisGame);
-playNowButton.addEventListener('click',playerMove);
-
+playNowButton.addEventListener('click', addEventListenerToGameCells);
