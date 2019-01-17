@@ -94,11 +94,14 @@ var playerMove = function(event) {
 };
 
 
-var addEventListenerToGameCells = function() {
-//   If cells Is Clicked
+var startGame = function() {
+    // register click events
     allCells.forEach(function(cell) {
         cell.addEventListener('click', playerMove);
     });
+
+    // Remove play button once clicked.
+    playNowButton.hidden = true;
 };
 
 // create a function that when you have already selected the cell and you cannot selected again
@@ -143,4 +146,4 @@ var resetThisGame = function(){
 
 
 resetBtn.addEventListener('click', resetThisGame);
-playNowButton.addEventListener('click', addEventListenerToGameCells);
+playNowButton.addEventListener('click', startGame);
