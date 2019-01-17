@@ -51,7 +51,7 @@ var updateDisplayWon = function() {
 }
 //update the display when you draw the game.
 var updateDisplayDraw = function() {
-    updateDisplay.innerText = "Oh!!! It's a Draw";
+    updateDisplay.innerText = "Oh!!! It's a Draw - Play Again";
 }
 
 // stored currentplayer as X 
