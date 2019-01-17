@@ -1,6 +1,6 @@
 console.log("Make this work");
 
-// var gameBoard = document.querySelectorAll('.game-board');
+var gameBoard = document.querySelector('#game-board');
 
 var allCells = document.querySelectorAll('.cell');
 var resetBtn = document.querySelector('.reset-btn')
@@ -103,6 +103,8 @@ var startGame = function() {
     // Remove play button once clicked.
     playNowButton.hidden = true;
 
+    // Show game board
+    gameBoard.hidden = false;
     // Show restart button
     resetBtn.hidden = false;
 };
@@ -147,6 +149,6 @@ var resetThisGame = function(){
     }
 };
 
-resetBtn.hidden = true;
+gameBoard.hidden = true;
 resetBtn.addEventListener('click', resetThisGame);
 playNowButton.addEventListener('click', startGame);
