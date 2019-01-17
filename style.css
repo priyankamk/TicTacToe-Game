@@ -66,19 +66,20 @@ main {
     background: seashell;
   } */
 
-.score-container {
-    display: flex;
+.score {
+    /* display: flex; */
     font-family: 'Indie Flower', cursive;
     align-items: flex-end;
     /* flex-wrap: wrap; */
 }
 
-.play-now {
+.play-now-btn ,.reset-btn {
     font-family: 'Indie Flower', cursive;
     font-size: 20px;
     background-color: aquamarine;
     border-radius: 10px;
 }
+
 .X {
     background-color:#FD8A8A;
 }

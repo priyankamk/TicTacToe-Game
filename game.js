@@ -5,8 +5,9 @@ console.log("Make this work");
 var allCells = document.querySelectorAll('.cell');
 var resetBtn = document.querySelector('.reset-btn')
 var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
+var playNowButton = document.querySelector('.play-now-btn');
 
-
+var updateDisplay = document.querySelector('.display');
 //1st select the location of the cell or all cell or that game
 
 //how do u know that player started the game
@@ -21,7 +22,7 @@ var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
 //Question: how to check the next player has to play next
 //Question: when you already done the symbol you cannot overwrite it - display saying "already selected"
 //Question: check the game has been won
-//once you the game player one the game make it turn all green once you clicked the 3 right one
+//once the player1 won the 3 cells = make it turn all differnetcolor once you clicked the 3 right one
 
 
 // Decision:
@@ -31,11 +32,7 @@ var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
 
 
 // the winning plan=So I have 3 sets of cells to compare against.
-// Horizontal - [1,2,3][4,5,6][7,8,9] same as reverse
 
-// Vertical - [1,4,7][2,5,8][3,6,9] same as reverse
-
-// diagonal - [1,5,9][3,5,7] same as reverse
 var winners = [];
 
 function loadAnswers() {
@@ -48,81 +45,100 @@ function loadAnswers() {
     winners.push([0, 4, 8]);
     winners.push([2, 4, 6]);
 }
-
 loadAnswers();
 
-// write a function that returns true if all items in
-// the array are same.
+var updateDisplayWon = function() {
+    updateDisplay.innerText = "Hoooraayyy!!!!! You Won this game";
+}
 
-
-
-
+var updateDisplayDraw = function() {
+    updateDisplay.innerText = "Oh!!! It's a Draw";
+}
 // var players = ['X','O']; // Array of strings
 // var turnCount = 0; // is used to track turns
 var currentPlayer = 'X' // is of type string tells a player X, O
 // var gameState = [null,null,null,null,null,null,null,null,null]; //default everything to be nil // each item either X or O or nil
 var playerXChoices = [];
 var playerOChoices = [];
+var hasWon = false;
 
 var playerMove = function(event) {
+    if(hasWon === true){
+        return;
+    } 
+    
     if(currentPlayer === 'X') {
         event.target.classList.add('X');
         playerXChoices.push(parseInt(event.target.getAttribute('id')));
-        
+        winCombo(playerXChoices);
+
     } else {
         event.target.classList.add('O');   
         playerOChoices.push(parseInt(event.target.getAttribute('id')));
+        winCombo(playerOChoices);
     }
-    // var id = event.target.getAttribute('id'); // '5'
-    // var actualId = parseInt(id); // 4
-    // gameState[actualId] = currentPlayer;
+    // debugger
     // switch player
     if(currentPlayer === 'X') {
         currentPlayer = 'O';
     } else {
         currentPlayer = 'X';
     }
-    // console.log(gameState);
+
+    //check for draw here
+    var totalTurns = playerXChoices.length + playerOChoices.length;
+    if(totalTurns >= 9){
+        updateDisplayDraw();
+    }
+    
 };
 
-//   If cells Is Already Clicked
+//   If cells Is Clicked
 allCells.forEach(function(cell) {
     cell.addEventListener('click', playerMove);
 })
 
+// create a function that when you have already selected the cell and you cannot selected again
+// write a function that returns true if all items in
+// the array are same.
 // iterate over the winners array and invoke the previous
-
-
+// function to define victory
+var winCombo = function(choices) {
 for (var i = 0; i < winners.length; i++){
-    for(var j = 0; j < playerXChoices.length; i++){
-        if(playerXChoices === winners) {
-            console.log("Hooraaay!! X has won this game");
-        }else
-        console.log("Its a draw");
-    }
-}   for(var k = 0; k < playerOChoices.length; k++){
-    if(playerOChoices === winners){
-        console.log("Hooraay!! O has won this game");
-    }else
-    console.log("Its a draw");
+    var count = 0;
+    for(var j = 0; j < winners[i].length; j++){
+
+        if (choices.includes(winners[i][j])) {
+            count++
+            console.log(count);
+        }
+    }   
+        if (count >= 3) {
+            hasWon = true;
+            updateDisplayWon();
+            console.log('yay');
+            return;
+        }
 }
-// allItemsSame function to define victory
-// do for loops two times
+};
+
+//write function to reset the game
+
+var resetThisGame = function(){
+    hasWon = false;
+    playerXChoices = [];
+    playerOChoices = [];
+    updateDisplay.innerText = "";
+    for(var i =0; i < allCells.length; i++){
+        if(allCells[i].classList.contains('X')){
+            allCells[i].classList.remove('X');
+        }else if(allCells[i].classList.contains('O')){
+            allCells[i].classList.remove('O');
+        }
+    }
+};
 
 
+resetBtn.addEventListener('click', resetThisGame);
+playNowButton.addEventListener('click',playerMove);
 
-
-
-
-
-// var takeTurns = function(event){
-//     event.target.classList.add('X') 
-//     event.target.classList.add('O') 
-// }
-
-// if -> takes a condition
-// a condition compares two things
-// left (condition) right
-// what is possible value on left
-// right side is always actual value
-// is my right side value one of the possible left
