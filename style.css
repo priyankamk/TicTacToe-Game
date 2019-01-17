@@ -68,12 +68,12 @@ main {
     background: seashell;
   } */
 
-.score {
-    /* display: flex; */
+/* .score {
+    display: flex;
     font-family: 'Indie Flower', cursive;
     align-items: flex-end;
-    /* flex-wrap: wrap; */
-}
+    flex-wrap: wrap;
+} */
 
 .play-now-btn ,.reset-btn {
     font-family: 'Indie Flower', cursive;
