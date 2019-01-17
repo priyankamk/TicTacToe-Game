@@ -3,9 +3,11 @@
 .wrapper {
     display: flex;
     justify-content: center;
-    align-content: flex-end;
+    /* align-content: flex-end; */
     flex-wrap: wrap;
-    margin: 100px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10%;
     /* background-image: url(http://www.pptbackgrounds.org/uploads/tic-tac-toe-backgrounds-wallpapers.jpg); */
 }
 
@@ -35,9 +37,10 @@ main {
 }
 .player {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    /* flex-direction: row; */
+    /* align-items: center; */
     justify-content: center;
+    align-items: flex-start;
     /* width: 50%;
     margin: 0 auto; */
     font-size: 30px;
@@ -52,6 +55,7 @@ main {
     margin: 0 auto;
     justify-content: center;
     padding: 0 10% 0 10%;
+    align-items: flex-start;
   }
 
 .cell {
@@ -99,6 +103,7 @@ footer {
     font-family: 'Indie Flower', cursive;
     font-size: 10px;
     margin: 0 auto;
+    justify-content: center;
     width: 80%;
-    padding: 0 0 0 40%;
+    padding: 10%;
 }
