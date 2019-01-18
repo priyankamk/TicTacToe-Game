@@ -18,7 +18,7 @@ body{
 header {
     display: flex;
     width: 80%; 
-    margin: 0 auto;;
+    margin: 0 auto;
     font-size: 40px;
     /* padding: 0 20% 0 20%; */
     /* align-items: center; */
@@ -35,7 +35,7 @@ main {
     width: 80%;
     margin: 0 auto;
 }
-.player {
+.player ,{
     display: flex;
     /* flex-direction: row; */
     /* align-items: center; */
@@ -46,6 +46,13 @@ main {
     font-size: 30px;
     /* padding: 30px; */
     font-family: 'Indie Flower', cursive;
+}
+
+.display {
+    font-family: 'Indie Flower', cursive;
+    justify-content: center;
+    display: flex;
+    font-size:50px;
 }
 
 .game-board {
@@ -74,12 +81,16 @@ main {
     background: seashell;
   } */
 
+.xTurn {
+    font-family: 'Indie Flower', cursive;
+    justify-content: center;
+}
 /* .score {
     display: flex;
     font-family: 'Indie Flower', cursive;
     align-items: flex-end;
     flex-wrap: wrap;
-} */
+}  */
 
 .play-now-btn ,.reset-btn {
     font-family: 'Indie Flower', cursive;

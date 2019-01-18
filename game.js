@@ -152,3 +152,4 @@ gameBoard.hidden = true;
 
 resetBtn.addEventListener('click', startGame);
 playNowButton.addEventListener('click', startGame);
+
