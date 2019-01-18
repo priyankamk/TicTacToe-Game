@@ -51,7 +51,7 @@ var updateDisplayWon = function() {
 }
 //update the display when you draw the game.
 var updateDisplayDraw = function() {
-    updateDisplay.innerText = "Oh!!! It's a Draw - Play Again";
+    updateDisplay.innerText = "Oh!!! It's a Tie - Play Again";
 }
 
 // stored currentplayer as X 
@@ -59,6 +59,7 @@ var currentPlayer = 'X' // is of type string tells a player X, O
 
 var playerXChoices = []; // To store choice made by X with every click made in cell.
 var playerOChoices = []; // To store choice made by O with every click made in cell.
+// flag - (hasWon)
 var hasWon = false; // To terminate once you have done your choices made in cell.which means either won or draw
 
 // create function to store the playerMove of X & O.
