@@ -102,6 +102,7 @@ var startGame = function() {
     allCells.forEach(function(cell) {
         cell.addEventListener('click', playerMove);
     });
+
     // Remove play button once clicked.
     playNowButton.hidden = true;
     // Show game board
@@ -115,9 +116,9 @@ var startGame = function() {
 // iterate over the winners array and invoke the previous
 // function to define victory
 var winCombo = function(choices) {
-for (var i = 0; i < winners.length; i++){
+for (var i = 0; i < winners.length; i++) {
     var count = 0;
-    for(var j = 0; j < winners[i].length; j++){
+    for(var j = 0; j < winners[i].length; j++) {
 
         if (choices.includes(winners[i][j])) {
             count++
@@ -129,11 +130,11 @@ for (var i = 0; i < winners.length; i++){
             updateDisplayWon();
             return;
         }
-}
+    }
 };
 
 //write function to reset the game
-var resetThisGame = function(){
+var resetThisGame = function() {
     hasWon = false;
     playerXChoices = [];
     playerOChoices = [];
