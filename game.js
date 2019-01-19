@@ -3,11 +3,13 @@ console.log("Make this work");
 var gameBoard = document.querySelector('#game-board');
 var allCells = document.querySelectorAll('.cell');
 
-
 // var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
 var playNowButton = document.querySelector('.play-now-btn');
 var updateDisplay = document.querySelector('.display');
-var resetBtn = document.querySelector('.reset-btn')
+var resetBtn = document.querySelector('.reset-btn');
+var player1Score = document.querySelector(".player1Score");
+var player2Score = document.querySelector(".player2Score");
+
 //1st select the location of the cell or all cell or that game
 
 //how do u know that player started the game
