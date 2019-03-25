@@ -30,6 +30,7 @@ main {
     width: 80%;
     margin: 0 auto;
 }
+
 .player {
     display: flex;
     justify-content: center;
@@ -67,22 +68,6 @@ main {
     border-right: 3px solid #525B76; 
   }
 
-/* .cell:hover {
-    background: seashell;
-  } */
-
-/* .xTurn {
-    font-family: 'Indie Flower', cursive;
-    justify-content: center;
-} */
-
-/* .score {
-    display: flex;
-    font-family: 'Indie Flower', cursive;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}  */
-
 .play-now-btn ,.reset-btn {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
@@ -101,7 +86,6 @@ main {
 }
 
 .X {
-    /* background-color:#FD8A8A; */
     background-image: url(https://i.redd.it/hxpk05wdgdp01.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -109,7 +93,6 @@ main {
 }
 
 .O {
-    /* background-color: #C4FD8A; */
     background-image: url(https://i.pinimg.com/originals/41/5c/01/415c0149634036095ce41035a2184eeb.jpg);
     background-size: cover;
     background-repeat: no-repeat;
