@@ -3,20 +3,13 @@
 .wrapper {
     display: flex;
     justify-content: center;
-    /* align-content: flex-end; */
     flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
-    /* padding: 10%; */
-    /* background-image: url(https://media.istockphoto.com/vectors/tictactoe-back-to-school-background-doodle-tic-tac-toe-game-pen-and-vector-id989794366?s=2048x2048); */
-    /* border: 1px solid black; */
-
 }
 
 body{
-    /* background-color:silver; */
     background-image: url(https://png.pngtree.com/thumb_back/fh260/back_pic/00/06/34/7956298ae43266e.jpg);
-    /* background: linear-gradient(to bottom, #00ff00 0%, #ff3300 100%); */
     background-size: cover;
   }
   
@@ -25,12 +18,8 @@ header {
     width: 80%; 
     margin: 0 auto;
     font-size: 40px;
-    /* padding: 0 20% 0 20%; */
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
     justify-content: center;
     font-family: 'Indie Flower', cursive;
-
 }
 
 main {
@@ -47,7 +36,6 @@ main {
     align-items: flex-start;
     margin: 0 auto;
     font-size: 30px;
-    /* height: 100%; */
     font-family: 'Indie Flower', cursive;
 }
 
@@ -59,14 +47,12 @@ main {
 }
 
 .game-board {
-    /* background-color: transparent; */
     width: 402px;
     height: 402px; 
     margin: 0 auto;
     justify-content: center;
     padding: 0 10% 0 10%;
     align-items: flex-start;
-    
   }
 
 .cell {
@@ -100,7 +86,11 @@ main {
 .play-now-btn ,.reset-btn {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
-    background-color: green;
+    color: red;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX8kl7NHFUN7g3Cusgl6-Vb1NiaYByGaIIs1XsB3S-CHngdgu0Jw);   
+    font-weight: bold;
+    background-size: contain;
+    background-repeat: space;
     align-self: flex-end;
     flex-wrap: wrap;
     display: flex;
@@ -131,7 +121,6 @@ footer {
     align-items: flex-end;
     font-family: 'Indie Flower', cursive;
     font-size: 10px;
-    /* margin: 0 auto; */
     justify-content: center;
     width: 80%;
     padding: 10%;
@@ -142,5 +131,4 @@ footer {
     justify-content: center;
     margin: 0 auto;
     padding: 10px;
-    /* border-top: 10px; */
 }

@@ -7,6 +7,7 @@ var allCells = document.querySelectorAll('.cell');
 var playNowButton = document.querySelector('.play-now-btn');
 var updateDisplay = document.querySelector('.display');
 var resetBtn = document.querySelector('.reset-btn');
+
 var player1Score = document.querySelector(".player1Score");
 var player2Score = document.querySelector(".player2Score");
 
@@ -49,7 +50,9 @@ loadAnswers();
 
 //update the display when you won the game.
 var updateDisplayWon = function() {
-    updateDisplay.innerText = "Hoooraayyy!!!!! You Won!!!";
+// var updateDisplayWon = function(str) {
+    // updateDisplay.innerText = str + " Won!!!";
+    updateDisplay.innerHTML = "Hooray you won!!!"
 }
 //update the display when you draw the game.
 var updateDisplayDraw = function() {
@@ -129,6 +132,8 @@ for (var i = 0; i < winners.length; i++) {
     }   
         if (count >= 3) {
             hasWon = true;
+            // winner = 'player1'
+            // updateDisplayWon(winner);
             updateDisplayWon();
             return;
         }
