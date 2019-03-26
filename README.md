@@ -31,4 +31,4 @@ HTML, CSS & JavaScript
 
 #### Resources
 
-* Tictactoe game made with html, css and javascript :[Check it out here!](https://priyankamk.github.io/TicTacToe-Game/)
+* Tictactoe game made with html, css and javascript :[Check it out here!](https://priyankamk.github.io/TicTacTorio/)
