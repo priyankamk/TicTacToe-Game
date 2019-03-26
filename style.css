@@ -71,8 +71,8 @@ main {
     min-width: 150px;
     align-items: center;
     border-radius: 10px;;
-    border-left: 3px solid rgba(6, 153, 13, 0.466); 
-    border-right: 3px solid rgba(6, 153, 13, 0.466); 
+    border-left: 3px solid rgb(26, 27, 26); 
+    border-right: 3px solid rgb(26, 27, 26); 
   }
 
 .play-now-btn  {

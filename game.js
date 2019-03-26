@@ -6,10 +6,11 @@ var playNowButton = document.querySelector('.play-now-btn');
 var updateDisplay = document.querySelector('.display-message');
 var playAgainBtn = document.querySelector('.playagain-btn');
 var resetBtn = document.querySelector('.reset-btn');
+
 var player1Score = document.querySelector("#player1Score");
 var player2Score = document.querySelector("#player2Score");
 
-// store score as 0 and increment.
+// store score as 0 and increment it when player wins.
 var score = {
     X: 0,
     O: 0
@@ -30,9 +31,8 @@ loadAnswers();
 
 //update the display when you won the game.
 var updateDisplayWon = function (player) {
-    // var updateDisplayWon = function(str) {
-    // updateDisplay.innerText = str + " Won!!!";
-    updateDisplay.innerHTML = "Hooray " + player + " won!!!"
+    
+    updateDisplay.innerHTML = "Hooray " + player + " won!!!";
 }
 //update the display when you draw the game.
 var updateDisplayDraw = function () {
@@ -83,7 +83,6 @@ var playerMove = function (event) {
     }
     // switch player
     switchPlayer();
-
     //check for draw here
     checkForDraw();
     event.target.removeEventListener('click', playerMove);
@@ -97,15 +96,19 @@ var startGame = function () {
     allCells.forEach(function (cell) {
         cell.addEventListener('click', playerMove);
     });
-
     // Remove play button once clicked.
     playNowButton.hidden = true;
     // Show game board
     gameBoard.hidden = false;
     // Show restart button
     playAgainBtn.hidden = false;
+    resetBtn.hidden = false;
 };
+resetBtn.hidden = true;
+// playAgainBtn = true;
+gameBoard.hidden = true;
 
+// increment score when a player wins
 var updateScore = function (winningPlayer) {
     score[winningPlayer]++;
     player1Score.innerHTML = '' + score['X'];
@@ -156,7 +159,7 @@ var resetThisGame = function () {
 
 // make gameboard hidden before clicking the Let's play button.
 
-gameBoard.hidden = true;
+
 
 playAgainBtn.addEventListener('click', startGame);
 playNowButton.addEventListener('click', startGame);
