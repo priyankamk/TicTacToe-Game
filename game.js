@@ -1,46 +1,20 @@
-console.log("Make this work");
-
 var gameInfo = document.querySelector('.game-info')
 var gameBoard = document.querySelector('#game-board');
 var allCells = document.querySelectorAll('.cell');
 
-// var playerTurnDisplay = document.querySelector("#playerTurnDisplay");
 var playNowButton = document.querySelector('.play-now-btn');
-var updateDisplay = document.querySelector('.display');
+var updateDisplay = document.querySelector('.display-message');
 var resetBtn = document.querySelector('.reset-btn');
 
 var player1Score = document.querySelector("#player1Score");
 var player2Score = document.querySelector("#player2Score");
 
+// store score as 0 and increment.
 var score = {
     X: 0,
     O: 0
 }
-
-//1st select the location of the cell or all cell or that game
-
-//how do u know that player started the game
-//who will start 1st
-
-//Decision: who ever starts the game tht player will be X
-//and the next person will be O
-
-//Question: how does player takes turn happen?
-//Decision: when you click the cell it has to change it to the player symbol or color
-
-//Question: how to check the next player has to play next
-//Question: when you already done the symbol you cannot overwrite it - display saying "already selected"
-//Question: check the game has been won
-//once the player1 won the 3 cells = make it turn all differnetcolor once you clicked the 3 right one
-
-
-// Decision:
-//if won - terminate the playing process - and display - which player has won the game
-//else - continue - till the game ends - and display - "its draw nobody won the game"
-//reset the game once you have played or end the game by clicking the reset button
-
-
-// the winning plan=So I have sets of cells to compare against.
+// wincombo
 var winners = [];
 function loadAnswers() {
     winners.push([0, 1, 2]);
@@ -58,7 +32,7 @@ loadAnswers();
 var updateDisplayWon = function (player) {
     // var updateDisplayWon = function(str) {
     // updateDisplay.innerText = str + " Won!!!";
-    updateDisplay.innerHTML = "Hooray" + player + "won!!!"
+    updateDisplay.innerHTML = "Hooray " + player + " won!!!"
 }
 //update the display when you draw the game.
 var updateDisplayDraw = function () {
@@ -78,35 +52,40 @@ var playerOChoices = []; // To store choice made by O with every click made in c
 // flag - (hasWon)
 var hasWon = false; // To terminate once you have done your choices made in cell.which means either won or draw
 
-// create function to store the playerMove of X & O.
-var playerMove = function (event) {
-    if (hasWon === true) {
-        return;
-    }
-
-    if (currentPlayer === 'X') {
-        event.target.classList.add('X');
-        playerXChoices.push(parseInt(event.target.getAttribute('id')));
-        winCombo('X', playerXChoices);
-
-    } else {
-        event.target.classList.add('O');
-        playerOChoices.push(parseInt(event.target.getAttribute('id')));
-        winCombo('O', playerOChoices);
-    }
-    // debugger
-    // switch player
+var switchPlayer = function () {
     if (currentPlayer === 'X') {
         currentPlayer = 'O';
     } else {
         currentPlayer = 'X';
     }
+}
 
-    //check for draw here
+var checkForDraw = function () {
     var totalTurns = playerXChoices.length + playerOChoices.length;
     if ((totalTurns >= 9) && !hasWon) {
         updateDisplayDraw();
     }
+}
+
+// create function to store the playerMove of X & O.
+var playerMove = function (event) {
+    if (hasWon === true) {
+        return;
+    }
+    if (currentPlayer === 'X') {
+        event.target.classList.add('X');
+        playerXChoices.push(parseInt(event.target.getAttribute('id')));
+        winCombo('X', playerXChoices);
+    } else {
+        event.target.classList.add('O');
+        playerOChoices.push(parseInt(event.target.getAttribute('id')));
+        winCombo('O', playerOChoices);
+    }
+    // switch player
+    switchPlayer();
+
+    //check for draw here
+    checkForDraw();
     event.target.removeEventListener('click', playerMove);
 };
 
