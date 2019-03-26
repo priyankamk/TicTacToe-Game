@@ -1,5 +1,6 @@
 console.log("Make this work");
 
+var gameInfo = document.querySelector('.game-info')
 var gameBoard = document.querySelector('#game-board');
 var allCells = document.querySelectorAll('.cell');
 
@@ -8,8 +9,13 @@ var playNowButton = document.querySelector('.play-now-btn');
 var updateDisplay = document.querySelector('.display');
 var resetBtn = document.querySelector('.reset-btn');
 
-var player1Score = document.querySelector(".player1Score");
-var player2Score = document.querySelector(".player2Score");
+var player1Score = document.querySelector("#player1Score");
+var player2Score = document.querySelector("#player2Score");
+
+var score = {
+    X: 0,
+    O: 0
+}
 
 //1st select the location of the cell or all cell or that game
 
@@ -37,7 +43,7 @@ var player2Score = document.querySelector(".player2Score");
 // the winning plan=So I have sets of cells to compare against.
 var winners = [];
 function loadAnswers() {
-    winners.push([0, 1, 2]);  
+    winners.push([0, 1, 2]);
     winners.push([3, 4, 5]);
     winners.push([6, 7, 8]);
     winners.push([0, 3, 6]);
@@ -49,14 +55,19 @@ function loadAnswers() {
 loadAnswers();
 
 //update the display when you won the game.
-var updateDisplayWon = function() {
-// var updateDisplayWon = function(str) {
+var updateDisplayWon = function (player) {
+    // var updateDisplayWon = function(str) {
     // updateDisplay.innerText = str + " Won!!!";
-    updateDisplay.innerHTML = "Hooray you won!!!"
+    updateDisplay.innerHTML = "Hooray" + player + "won!!!"
 }
 //update the display when you draw the game.
-var updateDisplayDraw = function() {
+var updateDisplayDraw = function () {
     updateDisplay.innerText = "Oh!!! It's a Tie - Play Again";
+}
+
+var preparePageForGameStart = function () {
+    gameInfo.style.display = 'none';
+    playNowButton.style.display = 'none';
 }
 
 // stored currentplayer as X 
@@ -68,24 +79,24 @@ var playerOChoices = []; // To store choice made by O with every click made in c
 var hasWon = false; // To terminate once you have done your choices made in cell.which means either won or draw
 
 // create function to store the playerMove of X & O.
-var playerMove = function(event) {
-    if(hasWon === true) {
+var playerMove = function (event) {
+    if (hasWon === true) {
         return;
-    } 
-    
-    if(currentPlayer === 'X') {
+    }
+
+    if (currentPlayer === 'X') {
         event.target.classList.add('X');
         playerXChoices.push(parseInt(event.target.getAttribute('id')));
-        winCombo(playerXChoices);
+        winCombo('X', playerXChoices);
 
     } else {
-        event.target.classList.add('O');   
+        event.target.classList.add('O');
         playerOChoices.push(parseInt(event.target.getAttribute('id')));
-        winCombo(playerOChoices);
+        winCombo('O', playerOChoices);
     }
     // debugger
     // switch player
-    if(currentPlayer === 'X') {
+    if (currentPlayer === 'X') {
         currentPlayer = 'O';
     } else {
         currentPlayer = 'X';
@@ -93,18 +104,18 @@ var playerMove = function(event) {
 
     //check for draw here
     var totalTurns = playerXChoices.length + playerOChoices.length;
-    if((totalTurns >= 9) && !hasWon) {
+    if ((totalTurns >= 9) && !hasWon) {
         updateDisplayDraw();
     }
     event.target.removeEventListener('click', playerMove);
 };
 
 // create funtion that - Only start when the player click the button (Let's Play) button
-var startGame = function() {
+var startGame = function () {
     // reset game state
     resetThisGame();
     // register click events
-    allCells.forEach(function(cell) {
+    allCells.forEach(function (cell) {
         cell.addEventListener('click', playerMove);
     });
 
@@ -116,43 +127,52 @@ var startGame = function() {
     resetBtn.hidden = false;
 };
 
+var updateScore = function (winningPlayer) {
+    score[winningPlayer]++;
+    player1Score.innerHTML = '' + score['X'];
+    player2Score.innerHTML = '' + score['O'];
+}
+
 // create a function that when you have already selected the cell and you cannot selected again
 // write a function that returns true if all items in the array are same.
 // iterate over the winners array and invoke the previous
 // function to define victory
-var winCombo = function(choices) {
-for (var i = 0; i < winners.length; i++) {
-    var count = 0;
-    for(var j = 0; j < winners[i].length; j++) {
+var winCombo = function (player, choices) {
+    for (var i = 0; i < winners.length; i++) {
+        var count = 0;
+        for (var j = 0; j < winners[i].length; j++) {
 
-        if (choices.includes(winners[i][j])) {
-            count++
-            console.log(count);
+            if (choices.includes(winners[i][j])) {
+                count++
+            }
         }
-    }   
         if (count >= 3) {
             hasWon = true;
             // winner = 'player1'
             // updateDisplayWon(winner);
+            updateScore(player);
             updateDisplayWon();
             return;
         }
     }
+    console.log(score);
 };
 
 //write function to reset the game
-var resetThisGame = function() {
+var resetThisGame = function () {
     hasWon = false;
     playerXChoices = [];
     playerOChoices = [];
     updateDisplay.innerText = "";
-    for(var i =0; i < allCells.length; i++){
-        if(allCells[i].classList.contains('X')){
+    for (var i = 0; i < allCells.length; i++) {
+        if (allCells[i].classList.contains('X')) {
             allCells[i].classList.remove('X');
-        }else if(allCells[i].classList.contains('O')){
+        } else if (allCells[i].classList.contains('O')) {
             allCells[i].classList.remove('O');
         }
     }
+    currentPlayer = 'X';
+    preparePageForGameStart();
 };
 
 // make gameboard hidden before clicking the Let's play button.

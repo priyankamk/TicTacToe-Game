@@ -27,14 +27,16 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
-.player {
+.game-info {
     display: flex;
     justify-content: center;
+    align-items: center;
     align-items: flex-start;
+    width: 100%;
     margin: 0 auto;
     font-size: 30px;
     font-family: 'Indie Flower', cursive;
@@ -115,3 +117,62 @@ footer {
     margin: 0 auto;
     padding: 10px;
 }
+
+
+.score1 > img {
+   
+    width: 80px;
+    height: 80px;
+    margin-right: 0;
+}
+
+.score2 > img {
+    width: 80px;
+    height: 80px;
+    margin-right: 0;
+}
+
+
+/* .score-container {
+    width:600px;
+    height:100px;
+    /* overflow:hidden; 
+
+} */
+.score1 {
+    /* width:100px;
+    float:left;
+    height:100px; */
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.score2 {
+    /* width:100px;
+    float:right;
+    height:100px; */
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* .align-container {
+    display: flex;
+    flex-flow: row nowrap; /* Align on the same line */
+    /* justify-content: space-between; Equal margin between the child elements */
+/* }  */
+
+.display-div {
+    text-align: center;
+    margin: 0 10px;
+}
+/* .container > div {
+ 
+    padding: 5px;
+   
+    /* font-weight: bold;
+    font-family: Tahoma; 
+  } 
