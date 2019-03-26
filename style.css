@@ -9,7 +9,7 @@
 }
 
 body{
-    background-image: url(https://png.pngtree.com/thumb_back/fh260/back_pic/00/06/34/7956298ae43266e.jpg);
+    background-image: url(image/background_image2.png);
     background-size: cover;
   }
   
@@ -20,8 +20,13 @@ header {
     font-size: 40px;
     justify-content: center;
     font-family: 'Indie Flower', cursive;
+    color: rgb(32, 219, 15);
+    text-shadow: black 10px 10px;
 }
-
+/* .header:default {
+    color: rgb(15, 15, 15);
+    text-shadow: rgb(244, 150, 9) 0px 10px;
+} */
 main {
     display: flex;
     justify-content: center;
@@ -32,10 +37,11 @@ main {
 }
 
 .game-info {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    align-items: flex-start;
+    align-items: flex-start; */
+    text-align: center;
     width: 100%;
     margin: 0 auto;
     font-size: 30px;
@@ -59,7 +65,7 @@ main {
   }
 
 .cell {
-    background-color:snow;
+    background-color:rgb(248, 244, 8);
     display: inline-block;
     margin: 3px;
     min-height: 150px;
@@ -70,33 +76,58 @@ main {
     border-right: 3px solid #525B76; 
   }
 
-.play-now-btn ,.reset-btn {
+.play-now-btn  {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
-    color: red;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX8kl7NHFUN7g3Cusgl6-Vb1NiaYByGaIIs1XsB3S-CHngdgu0Jw);   
+    color: rgb(11, 10, 9);
+    background-image: url(image/letsPlaybtn.png);   
     font-weight: bold;
-    background-size: contain;
-    background-repeat: space;
-    align-self: flex-end;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
     border-radius: 10px;
-    justify-content: center;
     padding: 10px;
 }
 
-.X {
-    background-image: url(https://i.redd.it/hxpk05wdgdp01.png);
+.reset-btn {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    color: rgb(11, 10, 9);
+    background-image: url(image/letsPlaybtn.png);   
+    font-weight: bold;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.play-again-box {
+    display: flex;
+    align-items: flex-end;
+    font-size: 10px;
     justify-content: center;
+    width: 80%;
+}
+
+.reset-btn:hover {
+    color: rgb(15, 15, 15);
+    text-shadow: rgb(244, 150, 9) 0px 10px;
+}
+.play-now-btn:hover {
+    color: rgb(15, 15, 15);
+    text-shadow: rgb(244, 150, 9) 0px 10px;
+}
+
+.X {
+    background-image: url(image/mario_Red.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+
 }
 
 .O {
-    background-image: url(https://i.pinimg.com/originals/41/5c/01/415c0149634036095ce41035a2184eeb.jpg);
-    background-size: cover;
+    background-image: url(image/mario_green.png);
+    background-size: contain;
     background-repeat: no-repeat;
     justify-content: center;   
 }
@@ -105,8 +136,9 @@ footer {
     display: flex;
     align-items: flex-end;
     font-family: 'Indie Flower', cursive;
-    font-size: 10px;
+    font-size: 30px;
     justify-content: center;
+    color: aliceblue;
     width: 80%;
     padding: 10%;
 }
@@ -118,61 +150,53 @@ footer {
     padding: 10px;
 }
 
-
-.score1 > img {
-   
-    width: 80px;
-    height: 80px;
-    margin-right: 0;
+.red-torio {
+    width: 10rem;
+    height: 10rem;
 }
 
-.score2 > img {
-    width: 80px;
-    height: 80px;
-    margin-right: 0;
+.green-torio {
+    width: 10rem;
+    height: 10rem;
 }
 
-
-/* .score-container {
-    width:600px;
-    height:100px;
-    /* overflow:hidden; 
-
-} */
 .score1 {
-    /* width:100px;
-    float:left;
-    height:100px; */
     font-family: 'Indie Flower', cursive;
-    font-size: 20px;
+    font-size: 50px;
     text-align: center;
     margin: 0 10px;
 }
 
 .score2 {
-    /* width:100px;
-    float:right;
-    height:100px; */
     font-family: 'Indie Flower', cursive;
-    font-size: 20px;
+    font-size: 50px;
     text-align: center;
     margin: 0 10px;
 }
 
-/* .align-container {
-    display: flex;
-    flex-flow: row nowrap; /* Align on the same line */
-    /* justify-content: space-between; Equal margin between the child elements */
-/* }  */
-
-.display-div {
-    text-align: center;
-    margin: 0 10px;
+.container {
+    flex-grow: 8;
+    margin: 0 auto;
+    align-self: center;
+  
 }
-/* .container > div {
- 
-    padding: 5px;
-   
-    /* font-weight: bold;
-    font-family: Tahoma; 
-  } 
+.left {
+    text-align: center;
+    font-family: 'Indie Flower', cursive;;
+    font-size: 50px;
+    /* color: rgb(15, 17, 15); */
+    flex-grow: 1;
+    color: rgb(22, 20, 20);
+    /* text-shadow: rgba(211, 12, 12, 0.603) 10px 10px; */
+}
+
+.right {
+    text-align: center;
+    font-family: 'Indie Flower', cursive;;
+    font-size: 50px;
+    /* color: rgb(24, 22, 22); */
+    flex-grow: 1;
+    color: rgb(5, 5, 5);
+    /* text-shadow: rgba(57, 212, 18, 0.699) 10px 10px; */
+}
+

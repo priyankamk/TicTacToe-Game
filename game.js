@@ -62,7 +62,7 @@ var updateDisplayWon = function (player) {
 }
 //update the display when you draw the game.
 var updateDisplayDraw = function () {
-    updateDisplay.innerText = "Oh!!! It's a Tie - Play Again";
+    updateDisplay.innerText = "Oh!!! It's a Draw - Play Again";
 }
 
 var preparePageForGameStart = function () {
