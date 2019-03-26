@@ -22,6 +22,12 @@ header {
     font-family: 'Indie Flower', cursive;
     color: rgb(32, 219, 15);
     text-shadow: black 10px 10px;
+    padding-right: 60px;
+}
+
+.info {
+    color: #000000;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
 
 main {
@@ -37,7 +43,7 @@ main {
     text-align: center;
     width: 100%;
     margin: 0 auto;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Indie Flower', cursive;
 }
 
@@ -58,7 +64,7 @@ main {
 }
 
 .cell {
-    background-color:rgb(248, 244, 8);
+    background-color:rgb(248, 192, 8);
     display: inline-block;
     margin: 3px;
     min-height: 150px;
@@ -73,7 +79,7 @@ main {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
     color: rgb(11, 10, 9);
-    background-image: url(image/letsPlaybtn.png);   
+    background-image: url(image/reset_playagain.png);   
     font-weight: bold;
     background-size: cover;
     background-repeat: no-repeat;
@@ -82,48 +88,67 @@ main {
     padding: 10px;
 }
 
-.reset-btn {
+.playagain-btn{
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
     color: rgb(11, 10, 9);
-    background-image: url(image/letsPlaybtn.png);   
+    background-image: url(image/reset_playagain.png);   
     font-weight: bold;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+    padding: 10px;
+    margin: 0 62px;
+}
+
+.reset-btn {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    color: rgb(11, 10, 9);
+    background-image: url(image/reset_playagain.png);   
+    font-weight: bold;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 10px;
+    /* margin-left: 5px; */
+    margin: 0 100px;
 }
 
 .play-again-box {
     display: flex;
     align-items: flex-end;
-    font-size: 10px;
     justify-content: center;
     width: 80%;
     padding-top: 5px;
 }
 
+.playagain-btn:hover {
+    color: rgb(15, 15, 15);
+    text-shadow: rgb(244, 9, 107) 0px 10px;
+}
+
 .reset-btn:hover {
     color: rgb(15, 15, 15);
-    text-shadow: rgb(244, 150, 9) 0px 10px;
+    text-shadow:  rgb(244, 9, 107) 0px 10px;
 }
 .play-now-btn:hover {
     color: rgb(15, 15, 15);
-    text-shadow: rgb(244, 150, 9) 0px 10px;
+    text-shadow:  rgb(244, 9, 107) 0px 10px;
 }
 
 .X {
     background-image: url(image/mario_Red.png);
     background-size: contain;
     background-repeat: no-repeat;
-    justify-content: center;
-
+    text-align: center;
 }
 
 .O {
     background-image: url(image/mario_green.png);
     background-size: contain;
     background-repeat: no-repeat;
-    justify-content: center;   
+    text-align: center;   
 }
 
 footer {
@@ -133,22 +158,12 @@ footer {
     font-size: 30px;
     justify-content: center;
     color: gold;
-    width: 80%;
-    padding: 10%;
-    /* text-shadow: gold 10px 10px; */
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
 
 .github {
     text-decoration: none;
-    color: aliceblue;
-   
-}
-
-.reset-btn {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 10px;
+    color: aliceblue;  
 }
 
 .red-torio {
@@ -179,8 +194,8 @@ footer {
     flex-grow: 8;
     margin: 0 auto;
     align-self: center;
-  
 }
+
 .left {
     text-align: center;
     font-family: 'Indie Flower', cursive;;
@@ -189,6 +204,8 @@ footer {
     flex-grow: 1;
     color: rgb(22, 20, 20);
     /* text-shadow: rgba(211, 12, 12, 0.603) 10px 10px; */
+    /* color: #FFFFFF; */
+    text-shadow: 0 0 10px rgb(240, 17, 17);
 }
 
 .right {
@@ -198,6 +215,6 @@ footer {
     /* color: rgb(24, 22, 22); */
     flex-grow: 1;
     color: rgb(5, 5, 5);
-    /* text-shadow: rgba(57, 212, 18, 0.699) 10px 10px; */
+    text-shadow: 0 0 10px rgb(9, 231, 20);
 }
 

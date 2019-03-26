@@ -4,8 +4,8 @@ var allCells = document.querySelectorAll('.cell');
 
 var playNowButton = document.querySelector('.play-now-btn');
 var updateDisplay = document.querySelector('.display-message');
+var playAgainBtn = document.querySelector('.playagain-btn');
 var resetBtn = document.querySelector('.reset-btn');
-
 var player1Score = document.querySelector("#player1Score");
 var player2Score = document.querySelector("#player2Score");
 
@@ -103,7 +103,7 @@ var startGame = function () {
     // Show game board
     gameBoard.hidden = false;
     // Show restart button
-    resetBtn.hidden = false;
+    playAgainBtn.hidden = false;
 };
 
 var updateScore = function (winningPlayer) {
@@ -158,6 +158,6 @@ var resetThisGame = function () {
 
 gameBoard.hidden = true;
 
-resetBtn.addEventListener('click', startGame);
+playAgainBtn.addEventListener('click', startGame);
 playNowButton.addEventListener('click', startGame);
 
