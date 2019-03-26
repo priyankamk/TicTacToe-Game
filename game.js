@@ -105,7 +105,6 @@ var showGameControls = function () {
     })
 }
 
-
 // create funtion that - Only start when the player click the button (Let's Play) button
 var startGame = function () {
     showGameControls();
@@ -122,7 +121,6 @@ var startGame = function () {
 
 };
 // make gameboard hidden before clicking the Let's play button.
-// hide.hidden = true
 gameBoard.hidden = true;
 
 // increment score when a player wins
@@ -178,14 +176,14 @@ var freshStartResetGame = function () {
     startGame();
     playAgain();
 }
-// reset all the score stored in player one and two. and start from 0
+
+// reset all the score stored in player 1 and 2. and start from 0.
 var resetTotalScore = function () {
     score['X'] = 0;
     score['O'] = 0;
 }
 
 hideGameControls();
-
 playAgainBtn.addEventListener('click', startGame);
 playNowButton.addEventListener('click', startGame);
 resetBtn.addEventListener('click', freshStartResetGame);

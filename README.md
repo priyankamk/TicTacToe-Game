@@ -10,12 +10,12 @@ Tic Tac Torio is a two player game where the goal of each user is to mark their 
 
 Tic tac toe is a solid game to show front-end capabilities in the browser and Js practice.
 
-#### Stretch Goals
-- Dont display the game board before clicking Let's play button
+#### Stretch Goals 
+- ~Dont display the game board before clicking Let's play button~ DONE
 
-- When the user wins, show text that the player won the game.
+- ~When the user wins, show text that the player won the game.~ DONE
 
-- Make the gameboard and page as a whole colorful.
+- ~Make the gameboard and page as a whole colorful.~ DONE
 
 #### Difficulties
 

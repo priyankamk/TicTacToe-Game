@@ -51,7 +51,6 @@ main {
     font-family: 'Indie Flower', cursive;
     justify-content: center;
     display: flex;
-    /* font-size:50px; */
 }
 
 .game-board {
@@ -127,20 +126,6 @@ main {
     padding-top: 5px;
 }
 
-/* .playagain-btn:hover {
-    color: rgb(15, 15, 15);
-    text-shadow: rgb(244, 9, 107) 0px 10px;
-}
-
-.reset-btn:hover {
-    color: rgb(15, 15, 15);
-    text-shadow:  rgb(244, 9, 107) 0px 10px;
-}
-.play-now-btn:hover {
-    color: rgb(15, 15, 15);
-    text-shadow:  rgb(244, 9, 107) 0px 10px;
-} */
-
 .X {
     background-image: url(image/mario_Red.png);
     background-size: contain;
@@ -204,11 +189,8 @@ footer {
     text-align: center;
     font-family: 'Indie Flower', cursive;;
     font-size: 50px;
-    /* color: rgb(15, 17, 15); */
     flex-grow: 1;
     color: rgb(22, 20, 20);
-    /* text-shadow: rgba(211, 12, 12, 0.603) 10px 10px; */
-    /* color: #FFFFFF; */
     text-shadow: 0 0 10px rgb(240, 17, 17);
 }
 
@@ -216,7 +198,6 @@ footer {
     text-align: center;
     font-family: 'Indie Flower', cursive;;
     font-size: 50px;
-    /* color: rgb(24, 22, 22); */
     flex-grow: 1;
     color: rgb(5, 5, 5);
     text-shadow: 0 0 10px rgb(9, 231, 20);
